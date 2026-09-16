@@ -13,4 +13,4 @@ Maintenir une présentation claire, légère et rapide à charger pour partager 
 ## Technique & Hébergement
 
 * **Structure** : Pages HTML / CSS.
-* **Hébergement** : Vercel (déploiement automatique via GitHub).
+* **Hébergement** : Vercel (synchronisé avec GitHub).
