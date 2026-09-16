@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet — Ce portfolio — Romain Blanloeil</title>
+<meta name="description" content="Comment ce portfolio a été construit : HTML/CSS pur, sans framework, direction design sur-mesure.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="nav-name" href="../index.html">Romain Blanloeil</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Ouvrir le menu">
+    <label for="nav-toggle" class="nav-toggle-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="../index.html#parcours">Parcours</a></li>
+      <li><a href="../index.html#competences">Compétences</a></li>
+      <li><a href="../index.html#projets">Projets</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="section" style="padding-bottom:0;">
+  <div class="wrap">
+    <a class="project-back" href="../index.html#projets">&larr; Projets</a>
+
+    <img class="project-hero-banner" src="../assets/img/banner-portfolio.jpg" alt="Aperçu de la page d'accueil du portfolio">
+
+    <div class="project-hero-head">
+      <p class="section-label">Projet</p>
+      <h1>Ce portfolio</h1>
+      <p class="project-synopsis">Le site que vous êtes en train de consulter — conçu et codé from scratch, sans framework, pour rester simple à maintenir pendant la reconversion.</p>
+      <div class="project-hero-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Vercel</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="project-content">
+
+      <h2>Contexte</h2>
+      <p>En reconversion vers l'administration systèmes &amp; réseaux, il fallait un support pour présenter ce parcours à des recruteurs : le contraste entre 20 ans dans le soin et une nouvelle orientation technique, les compétences en cours d'acquisition, et les projets personnels construits en autonomie (homelab, développement).</p>
+      <p>Le choix s'est porté sur un site fait maison plutôt qu'un template ou un générateur, pour garder la main sur chaque détail et éviter le rendu générique de nombreux portfolios.</p>
+
+      <h2>Stack technique</h2>
+      <ul>
+        <li>HTML5 &amp; CSS3 pur — aucun framework, pour rester simple à maintenir et éviter de se perdre dans un outil non maîtrisé</li>
+        <li>Typographie : Space Grotesk (titres), IBM Plex Sans (corps), IBM Plex Mono (labels techniques)</li>
+        <li>Déploiement : Vercel</li>
+        <li>Formulaire de contact : Formspree (pas de backend nécessaire)</li>
+      </ul>
+
+      <h2>Ce que ça fait concrètement</h2>
+      <ul>
+        <li>Page unique à défilement, plus adaptée à la lecture mobile qu'une structure multi-pages</li>
+        <li>Menu mobile en CSS pur (checkbox toggle), sans une ligne de JavaScript</li>
+        <li>Certifications avec statuts réels tenus à jour (en cours / en projet)</li>
+        <li>Cards projets renvoyant vers des pages dédiées, comme celle-ci</li>
+      </ul>
+
+      <h2>Défis &amp; solutions</h2>
+      <p>Construire un design distinctif sans framework ni bibliothèque de composants demande de faire des choix explicites à chaque étape plutôt que d'hériter de défauts tout faits : palette, typographie, densité, layout.</p>
+      <p>Le menu mobile est un exemple concret de contrainte technique : obtenir un panneau de navigation animé (ouverture/fermeture, icône burger qui se transforme en croix) sans JavaScript, uniquement avec une case à cocher cachée et des sélecteurs CSS (<code>:checked ~</code>).</p>
+
+      <h2>Résultat</h2>
+      <div class="project-result">
+        <p>Un site en ligne, qui évolue au fil de la formation TSSR et sert de document vivant pour les candidatures en alternance.</p>
+      </div>
+
+      <h2>Liens</h2>
+      <div class="project-links-list">
+        <a href="https://github.com/romain-blanloeil" target="_blank" rel="noopener">
+          <span>GitHub</span>
+          <span>romain-blanloeil</span>
+        </a>
+        <a href="https://blanloeil.com" target="_blank" rel="noopener">
+          <span>Site en ligne</span>
+          <span>blanloeil.com</span>
+        </a>
+      </div>
+
+      <div class="project-nav-footer">
+        <a class="project-back" href="../index.html#projets">&larr; Retour aux projets</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Romain Blanloeil</p>
+  </div>
+</footer>
+
+</body>
+</html>

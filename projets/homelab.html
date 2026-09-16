@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet — Homelab — Romain Blanloeil</title>
+<meta name="description" content="Infrastructure homelab personnelle : Proxmox, Active Directory, segmentation VLAN, BIND9, GLPI.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="nav-name" href="../index.html">Romain Blanloeil</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Ouvrir le menu">
+    <label for="nav-toggle" class="nav-toggle-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="../index.html#parcours">Parcours</a></li>
+      <li><a href="../index.html#competences">Compétences</a></li>
+      <li><a href="../index.html#projets">Projets</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="section" style="padding-bottom:0;">
+  <div class="wrap">
+    <a class="project-back" href="../index.html#projets">&larr; Projets</a>
+
+    <div class="project-hero-banner-placeholder">Schéma d'architecture réseau — à ajouter</div>
+
+    <div class="project-hero-head">
+      <p class="section-label">Projet</p>
+      <h1>Homelab</h1>
+      <p class="project-synopsis">Une infrastructure complète montée à la maison pour pratiquer en conditions réelles : virtualisation, segmentation réseau, annuaire d'entreprise, supervision.</p>
+      <div class="project-hero-tags">
+        <span class="tag">Proxmox</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">VLAN</span>
+        <span class="tag">pfSense</span>
+        <span class="tag">BIND9</span>
+        <span class="tag">GLPI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="project-content">
+
+      <h2>Contexte</h2>
+      <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier. Ce homelab sert de terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) est reproduite, cassée et réparée à la maison.</p>
+
+      <h2>Stack technique</h2>
+      <ul>
+        <li>Deux machines physiques : un serveur Proxmox (virtualisation) et un pare-feu dédié pfSense/OPNsense</li>
+        <li>Active Directory sur le domaine <code>blanloeil.home</code>, déployé et automatisé via des scripts PowerShell</li>
+        <li>Segmentation réseau en 5 VLAN : HOME, IOT, GUEST, LAB_TSSR, ADMIN</li>
+        <li>DNS avec BIND9 en environnement mixte Linux/Windows AD, avec une zone dédiée aux tests (<code>romain42.test</code>)</li>
+        <li>GLPI pour la supervision et la gestion de parc</li>
+      </ul>
+
+      <h2>Ce que ça fait concrètement</h2>
+      <ul>
+        <li>Isolation du trafic par usage (domestique, IoT, invités, labo, administration) via les 5 VLAN</li>
+        <li>Déploiement AD DS et jointure au domaine automatisés par script plutôt qu'à la main</li>
+        <li>Postes Linux (Debian) joints au domaine AD via <code>realmd</code>/<code>sssd</code>, aux côtés de postes Windows</li>
+        <li>Résolution DNS interne cohérente entre les deux mondes (BIND9 côté Linux, AD côté Windows)</li>
+      </ul>
+
+      <h2>Défis &amp; solutions</h2>
+      <p><strong>Transferts de zone DNS en échec.</strong> Sur la zone de test <code>romain42.test</code>, le DNS secondaire ne recevait pas les mises à jour de zone (AXFR) : après investigation, le problème venait d'erreurs de syntaxe dans les fichiers de zone BIND9, corrigées puis validées en forçant un transfert de zone manuel.</p>
+      <p><strong>Jointure au domaine impossible depuis un poste Debian 13/XFCE.</strong> Deux causes cumulées : une mauvaise configuration DNS dans <code>/etc/resolv.conf</code> qui empêchait la résolution du contrôleur de domaine, et une restriction du groupe <code>realm permit</code> qui bloquait la connexion des nouveaux utilisateurs AD une fois la machine jointe. Les deux corrigés, la connexion SSO a fonctionné normalement.</p>
+
+      <h2>Résultat</h2>
+      <div class="project-result">
+        <p>Un domaine Active Directory fonctionnel (<code>blanloeil.home</code>), un réseau segmenté en 5 VLAN, et une infrastructure qui sert de banc d'essai permanent pour les prochains sujets de la formation (certifications comprises).</p>
+      </div>
+
+      <h2>Liens</h2>
+      <div class="project-links-list">
+        <a href="https://github.com/romain-blanloeil" target="_blank" rel="noopener">
+          <span>GitHub</span>
+          <span>romain-blanloeil</span>
+        </a>
+      </div>
+
+      <div class="project-nav-footer">
+        <a class="project-back" href="../index.html#projets">&larr; Retour aux projets</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Romain Blanloeil</p>
+  </div>
+</footer>
+
+</body>
+</html>

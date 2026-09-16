@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet — App covoiturage rugby — Romain Blanloeil</title>
+<meta name="description" content="Application web de gestion des trajets et du planning goûter pour un groupe de rugby jeunes, en production.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="nav-name" href="../index.html">Romain Blanloeil</a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Ouvrir le menu">
+    <label for="nav-toggle" class="nav-toggle-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="../index.html#parcours">Parcours</a></li>
+      <li><a href="../index.html#competences">Compétences</a></li>
+      <li><a href="../index.html#projets">Projets</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="section" style="padding-bottom:0;">
+  <div class="wrap">
+    <a class="project-back" href="../index.html#projets">&larr; Projets</a>
+
+    <div class="project-hero-banner-placeholder">Capture d'écran — démo anonymisée à ajouter</div>
+
+    <div class="project-hero-head">
+      <p class="section-label">Projet</p>
+      <h1>App covoiturage rugby</h1>
+      <p class="project-synopsis">Une application web en production, utilisée chaque semaine par un groupe de rugby jeunes pour organiser les trajets et le planning goûter.</p>
+      <div class="project-hero-tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Google Sheets API</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="project-content">
+
+      <h2>Contexte</h2>
+      <p>Dans un groupe de rugby jeunes, organiser qui amène qui à l'entraînement et qui apporte le goûter chaque semaine se fait souvent à la main, par message. Cette application centralise les deux besoins dans un seul outil simple, pensé pour des parents qui n'ont pas de temps à perdre.</p>
+      <p><em>Note : les captures et la démo présentées ici sont anonymisées — prénoms fictifs, aucune donnée réelle des familles.</em></p>
+
+      <h2>Stack technique</h2>
+      <ul>
+        <li>HTML / CSS / JavaScript vanilla — pas de framework</li>
+        <li>Déploiement sur Vercel</li>
+        <li>Backend léger : Google Sheets utilisé comme base de données via export CSV</li>
+      </ul>
+
+      <h2>Ce que ça fait concrètement</h2>
+      <ul>
+        <li>Gestion des trajets et des covoiturages pour les entraînements</li>
+        <li>Rotation automatique du goûter du lundi, avec une fonction <code>mondayIndex()</code> qui saute correctement les périodes de vacances scolaires</li>
+        <li>Saisie des disponibilités via un formulaire Google existant, sans complexifier l'interface pour les parents</li>
+      </ul>
+
+      <h2>Défis &amp; solutions</h2>
+      <p><strong>Éviter la complexité côté saisie.</strong> Plutôt que d'ajouter de la logique conditionnelle dans le formulaire Google (qui aurait décalé les colonnes du CSV export et cassé le parsing), le choix a été d'étendre le formulaire existant de façon simple — plus robuste à maintenir dans le temps qu'une branche conditionnelle fragile.</p>
+      <p><strong>Ne pas se tromper de semaine.</strong> La fonction de rotation du goûter devait ignorer les vacances scolaires pour ne pas décaler le planning réel — logique testée et ajustée jusqu'à un calcul fiable de l'index du lundi.</p>
+
+      <h2>Résultat</h2>
+      <div class="project-result">
+        <p>Une application réellement utilisée chaque semaine par le groupe, en remplacement des échanges de messages pour organiser trajets et goûter.</p>
+      </div>
+
+      <h2>Liens</h2>
+      <div class="project-links-list">
+        <a href="https://github.com/romain-blanloeil" target="_blank" rel="noopener">
+          <span>GitHub</span>
+          <span>romain-blanloeil</span>
+        </a>
+      </div>
+
+      <div class="project-nav-footer">
+        <a class="project-back" href="../index.html#projets">&larr; Retour aux projets</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Romain Blanloeil</p>
+  </div>
+</footer>
+
+</body>
+</html>
