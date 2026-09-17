@@ -524,6 +524,14 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-mono);
   font-size: 0.85rem;
   border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .project-body {
