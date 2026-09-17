@@ -505,13 +505,15 @@ img { max-width: 100%; display: block; }
   background: var(--paper);
   display: flex;
   flex-direction: column;
-  transition: border-color 0.15s, transform 0.15s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 
 .project-card:hover,
 .project-card:focus-visible {
   border-color: var(--teal);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-thumb {
