@@ -43,7 +43,7 @@
         <span class="tag">Proxmox</span>
         <span class="tag">Active Directory</span>
         <span class="tag">VLAN</span>
-        <span class="tag">pfSense</span>
+        <span class="tag">OPNsense</span>
         <span class="tag">BIND9</span>
         <span class="tag">GLPI</span>
       </div>
@@ -56,20 +56,21 @@
     <div class="project-content">
 
       <h2>Contexte</h2>
-      <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier. Ce homelab sert de terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) est reproduite, cassée et réparée à la maison.</p>
+      <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier, j'ai pour projet le création d'un réseau domestique permettant l'apprentissage et garantissant un maximum  de sécurité. Ce homelab sera le terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) pourra être reproduite, cassée et réparée à la maison.</p>
 
       <h2>Stack technique</h2>
       <ul>
-        <li>Deux machines physiques : un serveur Proxmox (virtualisation) et un pare-feu dédié pfSense/OPNsense</li>
+        <li>Trois machines physiques : un serveur Proxmox (virtualisation de serveurs pour le homelab), un serveur de stockage de type NAS et un pare-feu dédié/routeur OPNsense</li>
+        <li>Un switch permettant la segmentation et la gestion des VLAN.</li>
+        <li>Segmentation réseau en 7 VLAN : PERSO, ENFANTS, IOT, GUEST, HOMELAB, STORAGE, ADMIN</li>
         <li>Active Directory sur le domaine <code>blanloeil.home</code>, déployé et automatisé via des scripts PowerShell</li>
-        <li>Segmentation réseau en 5 VLAN : HOME, IOT, GUEST, LAB_TSSR, ADMIN</li>
-        <li>DNS avec BIND9 en environnement mixte Linux/Windows AD, avec une zone dédiée aux tests (<code>romain42.test</code>)</li>
-        <li>GLPI pour la supervision et la gestion de parc</li>
+        <li>DNS avec BIND9 en environnement mixte Linux/Windows, GLPI pour la supervision et la gestion de parc.</li>
+      
       </ul>
 
       <h2>Ce que ça fait concrètement</h2>
       <ul>
-        <li>Isolation du trafic par usage (domestique, IoT, invités, labo, administration) via les 5 VLAN</li>
+        <li>Isolation du trafic par usage (perso, enfants, IoT, invités, homelab, storage, manadgement) via les 5 VLAN</li>
         <li>Déploiement AD DS et jointure au domaine automatisés par script plutôt qu'à la main</li>
         <li>Postes Linux (Debian) joints au domaine AD via <code>realmd</code>/<code>sssd</code>, aux côtés de postes Windows</li>
         <li>Résolution DNS interne cohérente entre les deux mondes (BIND9 côté Linux, AD côté Windows)</li>
