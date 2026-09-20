@@ -38,7 +38,7 @@
     <div class="project-hero-head">
       <p class="section-label">Projet</p>
       <h1>Homelab</h1>
-      <p class="project-synopsis">Une infrastructure complète montée à la maison pour pratiquer en conditions réelles : virtualisation, segmentation réseau, annuaire d'entreprise, supervision.</p>
+      <p class="project-synopsis">Une infrastructure complète en cours de conception pour pratiquer en conditions réelles : virtualisation, segmentation réseau, annuaire d'entreprise, supervision.</p>
       <div class="project-hero-tags">
         <span class="tag">Proxmox</span>
         <span class="tag">Active Directory</span>
@@ -56,29 +56,29 @@
     <div class="project-content">
 
       <h2>Contexte</h2>
-      <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier, j'ai pour projet le création d'un réseau domestique permettant l'apprentissage et garantissant un maximum  de sécurité. Ce homelab sera le terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) pourra être reproduite, cassée et réparée à la maison.</p>
+      <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier, j'ai pour projet la création d'un réseau domestique permettant l'apprentissage et garantissant un maximum  de sécurité. Ce homelab sera le terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) pourra être reproduite, cassée et réparée à la maison.</p>
 
       <h2>Stack technique</h2>
       <ul>
         <li>Trois machines physiques : un serveur Proxmox (virtualisation de serveurs pour le homelab), un serveur de stockage de type NAS et un pare-feu dédié/routeur OPNsense</li>
         <li>Un switch permettant la segmentation et la gestion des VLAN.</li>
         <li>Segmentation réseau en 7 VLAN : PERSO, ENFANTS, IOT, GUEST, HOMELAB, STORAGE, ADMIN</li>
-        <li>Active Directory sur le domaine <code>blanloeil.home</code>, déployé et automatisé via des scripts PowerShell</li>
+        <li>Active Directory sur le domaine <code>blanloeil.home</code> qui sera déployé et automatisé via des scripts PowerShell</li>
         <li>DNS avec BIND9 en environnement mixte Linux/Windows, GLPI pour la supervision et la gestion de parc.</li>
       
       </ul>
 
       <h2>Ce que ça fera concrètement</h2>
       <ul>
-        <li>Isolation du trafic par usage (perso, enfants, IoT, invités, homelab, storage, manadgement) via les 7 VLAN</li>
+        <li>Isolation du trafic par usage (perso, enfants, IoT, guests, homelab, storage, admin) via les 7 VLAN</li>
         <li>Déploiement AD DS et jointure au domaine automatisés par script plutôt qu'à la main</li>
-        <li>Postes Linux (Debian) joints au domaine AD via <code>realmd</code>/<code>samba</code>/<code>sssd</code>, aux côtés des postes Windows</li>
+        <li>Postes Linux (Debian) joints au domaine AD via <code>realmd</code>/<code>sssd</code>, aux côtés des postes Windows</li>
         <li>Résolution DNS interne cohérente entre les deux mondes (BIND9 côté Linux, AD côté Windows)</li>
       </ul>
 
       <h2>Défis &amp; solutions</h2>
-      <p><strong>Transferts de zone DNS en échec.</strong> Lors de tests en virtualisation, le DNS secondaire ne recevait pas les mises à jour de zone : après investigation, le problème venait d'erreurs de syntaxe dans les fichiers de zone BIND9, corrigées puis validées en forçant un transfert de zone manuel.</p>
-      <p><strong>Jointure au domaine impossible depuis un poste Debian 13/XFCE.</strong> Deux causes cumulées : une mauvaise configuration DNS dans <code>/etc/resolv.conf</code> qui empêchait la résolution du contrôleur de domaine, et une restriction du groupe <code>realm permit</code> qui bloquait la connexion des nouveaux utilisateurs AD une fois la machine jointe. Les deux corrigés, la connexion SSO a fonctionné normalement.</p>
+      <p><strong>Transferts de zone DNS en échec.</strong> Lors de tests en environnement virtualisé, le DNS secondaire ne recevait pas les mises à jour de zone : après investigation, le problème venait d'erreurs de syntaxe dans les fichiers de zone BIND9, corrigées puis validées en forçant un transfert de zone manuel.</p>
+      <p><strong>Lors de tests sur des machines virtuelles, jointure au domaine impossible depuis un poste Debian 13/XFCE.</strong> Deux causes cumulées : une mauvaise configuration DNS dans <code>/etc/resolv.conf</code> qui empêchait la résolution du contrôleur de domaine, et une restriction du groupe <code>realm permit</code> qui bloquait la connexion des nouveaux utilisateurs AD une fois la machine jointe. Les deux corrigés, la connexion SSO a fonctionné normalement.</p>
 
       <h2>Résultat Attendu</h2>
       <div class="project-result">
