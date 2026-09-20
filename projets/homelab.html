@@ -68,21 +68,21 @@
       
       </ul>
 
-      <h2>Ce que ça fait concrètement</h2>
+      <h2>Ce que ça fera concrètement</h2>
       <ul>
-        <li>Isolation du trafic par usage (perso, enfants, IoT, invités, homelab, storage, manadgement) via les 5 VLAN</li>
+        <li>Isolation du trafic par usage (perso, enfants, IoT, invités, homelab, storage, manadgement) via les 7 VLAN</li>
         <li>Déploiement AD DS et jointure au domaine automatisés par script plutôt qu'à la main</li>
-        <li>Postes Linux (Debian) joints au domaine AD via <code>realmd</code>/<code>sssd</code>, aux côtés de postes Windows</li>
+        <li>Postes Linux (Debian) joints au domaine AD via <code>realmd</code>/<code>samba</code>/<code>sssd</code>, aux côtés des postes Windows</li>
         <li>Résolution DNS interne cohérente entre les deux mondes (BIND9 côté Linux, AD côté Windows)</li>
       </ul>
 
       <h2>Défis &amp; solutions</h2>
-      <p><strong>Transferts de zone DNS en échec.</strong> Sur la zone de test <code>romain42.test</code>, le DNS secondaire ne recevait pas les mises à jour de zone (AXFR) : après investigation, le problème venait d'erreurs de syntaxe dans les fichiers de zone BIND9, corrigées puis validées en forçant un transfert de zone manuel.</p>
+      <p><strong>Transferts de zone DNS en échec.</strong> Lors de tests en virtualisation, le DNS secondaire ne recevait pas les mises à jour de zone : après investigation, le problème venait d'erreurs de syntaxe dans les fichiers de zone BIND9, corrigées puis validées en forçant un transfert de zone manuel.</p>
       <p><strong>Jointure au domaine impossible depuis un poste Debian 13/XFCE.</strong> Deux causes cumulées : une mauvaise configuration DNS dans <code>/etc/resolv.conf</code> qui empêchait la résolution du contrôleur de domaine, et une restriction du groupe <code>realm permit</code> qui bloquait la connexion des nouveaux utilisateurs AD une fois la machine jointe. Les deux corrigés, la connexion SSO a fonctionné normalement.</p>
 
-      <h2>Résultat</h2>
+      <h2>Résultat Attendu</h2>
       <div class="project-result">
-        <p>Un domaine Active Directory fonctionnel (<code>blanloeil.home</code>), un réseau segmenté en 5 VLAN, et une infrastructure qui sert de banc d'essai permanent pour les prochains sujets de la formation (certifications comprises).</p>
+        <p>Un domaine Active Directory fonctionnel (<code>blanloeil.home</code>), un réseau segmenté en 7 VLAN, un serveur de stockage accessible depuis l'extérieur et une infrastructure qui sert de banc d'essai permanent pour les prochains sujets de la formation.</p>
       </div>
 
       <h2>Liens</h2>
