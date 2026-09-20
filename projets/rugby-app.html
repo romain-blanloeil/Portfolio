@@ -38,7 +38,7 @@
     <div class="project-hero-head">
       <p class="section-label">Projet</p>
       <h1>App covoiturage rugby</h1>
-      <p class="project-synopsis">Une application web en production, utilisée chaque semaine par un groupe de rugby jeunes pour organiser les trajets et le planning goûter.</p>
+      <p class="project-synopsis">Une application web en production, utilisée chaque semaine par les parents d'un groupe de jeunes pour organiser les trajets à l'entrainement de rugby et le planning goûter.</p>
       <div class="project-hero-tags">
         <span class="tag">JavaScript</span>
         <span class="tag">Vercel</span>
@@ -53,7 +53,7 @@
     <div class="project-content">
 
       <h2>Contexte</h2>
-      <p>Dans un groupe de rugby jeunes, organiser qui amène qui à l'entraînement et qui apporte le goûter chaque semaine se fait souvent à la main, par message. Cette application centralise les deux besoins dans un seul outil simple, pensé pour des parents qui n'ont pas de temps à perdre.</p>
+      <p>S'arranger pour du covoiturage est une bonne chose, mais organiser qui amène qui à l'entraînement et qui apporte le goûter chaque semaine se fait souvent à la main, par message. Cette application centralise les deux besoins dans un seul outil simple, pensé pour des parents qui n'ont pas de temps à perdre.</p>
       <p><em>Note : les captures et la démo présentées ici sont anonymisées — prénoms fictifs, aucune donnée réelle des familles.</em></p>
 
       <h2>Stack technique</h2>
@@ -66,13 +66,14 @@
       <h2>Ce que ça fait concrètement</h2>
       <ul>
         <li>Gestion des trajets et des covoiturages pour les entraînements</li>
-        <li>Rotation automatique du goûter du lundi, avec une fonction <code>mondayIndex()</code> qui saute correctement les périodes de vacances scolaires</li>
+        <li>Rotation automatique du goûter du lundi</li>
+        <li>Une fonction <code>mondayIndex()</code> qui saute correctement les périodes de vacances scolaires</li>
         <li>Saisie des disponibilités via un formulaire Google existant, sans complexifier l'interface pour les parents</li>
       </ul>
 
       <h2>Défis &amp; solutions</h2>
       <p><strong>Éviter la complexité côté saisie.</strong> Plutôt que d'ajouter de la logique conditionnelle dans le formulaire Google (qui aurait décalé les colonnes du CSV export et cassé le parsing), le choix a été d'étendre le formulaire existant de façon simple — plus robuste à maintenir dans le temps qu'une branche conditionnelle fragile.</p>
-      <p><strong>Ne pas se tromper de semaine.</strong> La fonction de rotation du goûter devait ignorer les vacances scolaires pour ne pas décaler le planning réel — logique testée et ajustée jusqu'à un calcul fiable de l'index du lundi.</p>
+      <p><strong>Ne pas se tromper de semaine.</strong> La fonction de rotation des trajets et du goûter devait ignorer les vacances scolaires pour ne pas décaler le planning réel — logique testée et ajustée jusqu'à un calcul fiable de l'index du lundi.</p>
 
       <h2>Résultat</h2>
       <div class="project-result">
