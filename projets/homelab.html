@@ -64,7 +64,7 @@
         <li>Un switch permettant la segmentation et la gestion des VLAN.</li>
         <li>Segmentation réseau en 7 VLAN : PERSO, ENFANTS, IOT, GUEST, HOMELAB, STORAGE, ADMIN</li>
         <li>Active Directory sur le domaine <code>blanloeil.home</code> qui sera déployé et automatisé via des scripts PowerShell</li>
-        <li>DNS avec BIND9 en environnement mixte Linux/Windows, GLPI pour la supervision et la gestion de parc.</li>
+        <li>DNS avec BIND9 en environnement mixte Linux/Windows, GLPI pour la gestion de parc.</li>
       
       </ul>
 
@@ -80,7 +80,7 @@
       <p><strong>Transferts de zone DNS en échec.</strong> Lors de tests en environnement virtualisé, le DNS secondaire ne recevait pas les mises à jour de zone : après investigation, le problème venait d'erreurs de syntaxe dans les fichiers de zone BIND9, corrigées puis validées en forçant un transfert de zone manuel.</p>
       <p><strong>Lors de tests sur des machines virtuelles, jointure au domaine impossible depuis un poste Debian 13/XFCE.</strong> Deux causes cumulées : une mauvaise configuration DNS dans <code>/etc/resolv.conf</code> qui empêchait la résolution du contrôleur de domaine, et une restriction du groupe <code>realm permit</code> qui bloquait la connexion des nouveaux utilisateurs AD une fois la machine jointe. Les deux corrigés, la connexion SSO a fonctionné normalement.</p>
 
-      <h2>Résultat Attendu</h2>
+      <h2>Résultat attendu</h2>
       <div class="project-result">
         <p>Un domaine Active Directory fonctionnel (<code>blanloeil.home</code>), un réseau segmenté en 7 VLAN, un serveur de stockage accessible depuis l'extérieur via VPN et une infrastructure qui sert de banc d'essai permanent pour les prochains sujets de la formation.</p>
       </div>
