@@ -257,13 +257,6 @@ img { max-width: 100%; display: block; }
   background: var(--paper-dim);
 }
 
-.tag::before,
-.tag::after {
-  content: '`';
-  color: var(--ink-soft);
-  opacity: 0.5;
-}
-
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
