@@ -529,6 +529,14 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 
+.project-hero-schema-reseau {
+   width: 100%;
+   height: auto;
+   margin-top: 1.5rem;
+   border: 1px solid var(--line);
+   border-radius: 6px;
+}
+
 .project-body {
   padding: 1.3rem;
   flex: 1;
