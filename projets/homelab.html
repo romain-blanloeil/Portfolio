@@ -69,9 +69,9 @@
       <h2>Stack technique</h2>
       <ul>
         <li>Trois machines physiques : un serveur Proxmox (virtualisation de serveurs pour le homelab), un serveur de stockage de type NAS et un pare-feu dédié/routeur OPNsense</li>
-        <li>Plan d'adressage : un bloc <code>10.44.0.0/16</code>, avec un /24 par VLAN (<code>10.44.&lt;n° de VLAN&gt;.0/24</code>)</li>
-        <li>Un switch permettant la segmentation et la gestion des VLAN.</li>
+        <li>Un switch managé PoE relié à OPNsense par un trunk 802.1Q (routage inter-VLAN et filtrage assurés par le pare-feu), et une borne WiFi avec un SSID par réseau</li>
         <li>Segmentation réseau en 7 VLAN : Home, Controle_Parental, IoT, Guest, Homelab, Storage, Management</li>
+        <li>Plan d'adressage : un bloc <code>10.44.0.0/16</code>, avec un /24 par VLAN (<code>10.44.&lt;n° de VLAN&gt;.0/24</code>)</li>
         <li>Active Directory sur le domaine <code>blanloeil.home</code> qui sera déployé et automatisé via des scripts PowerShell</li>
         <li>DNS avec BIND9 en environnement mixte Linux/Windows, GLPI pour la gestion de parc.</li>
       
