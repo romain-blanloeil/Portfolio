@@ -56,7 +56,7 @@
     <div class="project-content">
 
       <h2>Contexte</h2>
-      <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier, j'ai donc pour projet la création d'un réseau domestique permettant l'apprentissage et garantissant un maximum de sécurité. Ce homelab sera le terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) pourra être reproduite, cassée et réparée à la maison.</p>
+      <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier : j'ai donc pour projet la création d'un réseau domestique permettant l'apprentissage et garantissant un maximum de sécurité. Ce homelab sera le terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) pourra être reproduite, cassée et réparée à la maison.</p>
 
       <h2>État d'avancement</h2>
       <ul>
@@ -68,6 +68,7 @@
       <h2>Stack technique</h2>
       <ul>
         <li>Trois machines physiques : un serveur Proxmox (virtualisation de serveurs pour le homelab), un serveur de stockage de type NAS et un pare-feu dédié/routeur OPNsense</li>
+        <li>Plan d'adressage : un bloc <code>10.44.0.0/16</code>, avec un /24 par VLAN (<code>10.44.&lt;n° de VLAN&gt;.0/24</code>)</li>
         <li>Un switch permettant la segmentation et la gestion des VLAN.</li>
         <li>Segmentation réseau en 7 VLAN : Home, Controle_Parental, IoT, Guest, Homelab, Storage, Management</li>
         <li>Active Directory sur le domaine <code>blanloeil.home</code> qui sera déployé et automatisé via des scripts PowerShell</li>
