@@ -58,11 +58,18 @@
       <h2>Contexte</h2>
       <p>Impossible d'apprendre l'administration systèmes &amp; réseaux uniquement sur le papier, j'ai donc pour projet la création d'un réseau domestique permettant l'apprentissage et garantissant un maximum de sécurité. Ce homelab sera le terrain d'entraînement en conditions réelles, en parallèle de la formation TSSR : chaque notion vue en cours (AD, DNS, segmentation réseau) pourra être reproduite, cassée et réparée à la maison.</p>
 
+      <h2>État d'avancement</h2>
+      <ul>
+        <li><strong>Validé en environnement virtualisé :</strong> DNS BIND9 (transferts de zone), virtualisation imbriquée, jointure Debian au domaine AD</li>
+        <li><strong>En cours :</strong> déploiement sur les machines physiques (OPNsense, Proxmox, NAS)</li>
+        <li><strong>À venir :</strong> automatisation PowerShell du déploiement AD DS, GLPI</li>
+      </ul>
+      
       <h2>Stack technique</h2>
       <ul>
         <li>Trois machines physiques : un serveur Proxmox (virtualisation de serveurs pour le homelab), un serveur de stockage de type NAS et un pare-feu dédié/routeur OPNsense</li>
         <li>Un switch permettant la segmentation et la gestion des VLAN.</li>
-        <li>Segmentation réseau en 7 VLAN : Home, Contrôle parental, IoT, Guest, Homelab, Storage, Management</li>
+        <li>Segmentation réseau en 7 VLAN : Home, Controle_Parental, IoT, Guest, Homelab, Storage, Management</li>
         <li>Active Directory sur le domaine <code>blanloeil.home</code> qui sera déployé et automatisé via des scripts PowerShell</li>
         <li>DNS avec BIND9 en environnement mixte Linux/Windows, GLPI pour la gestion de parc.</li>
       
@@ -70,7 +77,7 @@
 
       <h2>Ce que ça fera concrètement</h2>
       <ul>
-        <li>Isolation du trafic par usage (perso, enfants, IoT, guests, homelab, storage, admin) via les 7 VLAN</li>
+        <li>Isolation du trafic par usage (home, contrôle parental, IoT, guest, homelab, storage, management) via les 7 VLAN</li>
         <li>Déploiement AD DS et jointure au domaine automatisés par script plutôt qu'à la main</li>
         <li>Postes Linux (Debian) joints au domaine AD via <code>realmd</code>/<code>sssd</code>, aux côtés des postes Windows</li>
         <li>Résolution DNS interne cohérente entre les deux mondes (BIND9 côté Linux, AD côté Windows)</li>
@@ -110,6 +117,7 @@
   window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
-  </body>
+
+</body>
   
 </html>
