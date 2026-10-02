@@ -46,6 +46,7 @@
   <text x="692" y="263" text-anchor="middle" class="mono-small" font-size="10.5">DHCP / DNS</text>
 
   <line x1="600" y1="288" x2="600" y2="312" class="line" />
+  <text x="612" y="304" class="tag" font-size="10">trunk 802.1Q (tous les VLAN)</text>
 
   <!-- Switch -->
   <rect x="440" y="312" width="320" height="50" rx="10" class="box" />
@@ -128,13 +129,14 @@
   <!-- Borne WiFi : câble physique vers le switch, port trunk (plusieurs VLANs taggés) -->
   <path d="M 760,337 H 1245 V 430" class="line" />
   <text x="1002" y="330" text-anchor="middle" class="tag" font-size="10">port trunk</text>
-  <rect x="1160" y="430" width="150" height="130" rx="10" class="box" />
+  <rect x="1160" y="430" width="150" height="150" rx="10" class="box" />
   <text x="1235" y="452" text-anchor="middle" class="label" font-size="13">Borne WiFi PoE</text>
   <text x="1235" y="470" text-anchor="middle" class="mono-small" font-size="10">mgmt: VLAN 99</text>
   <text x="1235" y="484" text-anchor="middle" class="mono-small" font-size="10">(trunk)</text>
-  <text x="1235" y="504" text-anchor="middle" class="mono-small" font-size="10">SSID → Home / IoT</text>
-  <text x="1235" y="518" text-anchor="middle" class="mono-small" font-size="10">/ Guest</text>
-  <text x="1235" y="540" text-anchor="middle" class="tag" font-size="9.5">réseau à part</text>
+  <text x="1235" y="504" text-anchor="middle" class="mono-small" font-size="10">SSID → Home /</text>
+  <text x="1235" y="518" text-anchor="middle" class="mono-small" font-size="10">Controle_Parental /</text>
+  <text x="1235" y="532" text-anchor="middle" class="mono-small" font-size="10">IoT / Guest</text>
+  <text x="1235" y="556" text-anchor="middle" class="tag" font-size="9.5">1 SSID par VLAN</text>
 
   <!-- footer -->
   <text x="70" y="740" class="mono-small" font-size="11">blanloeil.home</text>
