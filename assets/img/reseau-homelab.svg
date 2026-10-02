@@ -136,7 +136,7 @@
   <text x="1235" y="504" text-anchor="middle" class="mono-small" font-size="10">SSID → Home /</text>
   <text x="1235" y="518" text-anchor="middle" class="mono-small" font-size="10">Controle_Parental /</text>
   <text x="1235" y="532" text-anchor="middle" class="mono-small" font-size="10">IoT / Guest</text>
-  <text x="1235" y="556" text-anchor="middle" class="tag" font-size="9.5">1 SSID par VLAN</text>
+  <text x="1235" y="556" text-anchor="middle" class="tag" font-size="9.5">1 VLAN par SSID</text>
 
   <!-- footer -->
   <text x="70" y="740" class="mono-small" font-size="11">blanloeil.home</text>
