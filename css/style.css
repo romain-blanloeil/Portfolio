@@ -535,6 +535,7 @@ img { max-width: 100%; display: block; }
    margin-top: 1.5rem;
    border: 1px solid var(--line);
    border-radius: 6px;
+   cursor: zoom-in;
 }
 
 .project-body {
