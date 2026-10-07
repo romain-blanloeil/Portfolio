@@ -73,7 +73,7 @@
       </ul>
 
       <h2>Défis &amp; solutions</h2>
-      <p><strong>Éviter la complexité côté saisie.</strong> Plutôt que d'ajouter de la logique conditionnelle dans le formulaire Google (qui aurait décalé les colonnes du CSV export et cassé le parsing), le choix a été d'étendre le formulaire existant de façon simple — plus robuste à maintenir dans le temps qu'une branche conditionnelle fragile.</p>
+      <p><strong>Garder un formulaire simple malgré l'ajout du goûter.</strong> L'application gérait d'abord le covoiturage ; la rotation du goûter est venue ensuite. J'ai envisagé d'adapter le formulaire Google selon la date, pour proposer soit les actions du lundi, soit celles du mercredi. Mais cette logique conditionnelle compliquait le parsing du CSV exporté par le script. J'ai préféré garder un formulaire unique et simple, plus facile à maintenir et à remplir pour les parents.</p>
       <p><strong>Ne pas se tromper de semaine.</strong> La fonction de rotation des trajets et du goûter devait ignorer les vacances scolaires pour ne pas décaler le planning réel — logique testée et ajustée jusqu'à un calcul fiable de l'index du lundi.</p>
 
       <h2>Résultat</h2>
