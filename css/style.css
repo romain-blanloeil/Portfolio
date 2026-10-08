@@ -147,8 +147,8 @@ img { max-width: 100%; display: block; }
 .nav-links a.nav-cv {
   color: var(--teal);
   border: 1px solid var(--teal);
-  border-radius: 3px;
-  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  padding: 0.15rem 0.7rem;
 }
 .nav-links a.nav-cv:hover {
   background: var(--teal);
