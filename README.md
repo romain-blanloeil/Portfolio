@@ -1,16 +1,23 @@
-# Portfolio
+# Portfolio — Romain Blanloeil
 
-## Portfolio Personnel
+Site vitrine présentant mon parcours, mes compétences et mes projets. Étudiant TSSR à l'ENI École Informatique de Nantes, je recherche une alternance Bac+4 Administrateur Systèmes & Réseaux à partir de janvier 2027.
 
-Mon site vitrine professionnel pour présenter mon parcours, mes compétences et mes projets.
-
-**Lien du site** : [portfolio-whit3roro.vercel.app](https://portfolio-whit3roro.vercel.app/)
+**Site en ligne : [romain.blanloeil.com](https://romain.blanloeil.com)**
 
 ## Objectif
 
-Maintenir une présentation claire, légère et rapide à charger pour partager mon CV, mes réalisations et permettre de rentrer en contact.
+Une présentation claire, légère et rapide à charger, pour partager mon CV et mes réalisations, et permettre de me contacter.
 
-## Technique & Hébergement
+## Technique
 
-* **Structure** : Pages HTML / CSS.
-* **Hébergement** : Vercel (synchronisé avec GitHub).
+- Pages HTML / CSS, sans framework
+- Menu mobile en CSS pur
+- Formulaire de contact via Formspree
+- Hébergement sur Vercel, déploiement automatique depuis GitHub
+
+## Structure
+
+- `index.html` : page d'accueil
+- `projets/` : une page par projet
+- `css/style.css` : feuille de style unique
+- `assets/` : images et CV
