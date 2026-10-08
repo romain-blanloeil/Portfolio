@@ -538,6 +538,14 @@ img { max-width: 100%; display: block; }
    cursor: zoom-in;
 }
 
+.demo-app {
+   width: 100%;
+   height: auto;
+   margin-top: 1.5rem;
+   border: 1px solid var(--line);
+   border-radius: 6px;
+}
+
 .project-body {
   padding: 1.3rem;
   flex: 1;
