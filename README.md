@@ -15,6 +15,11 @@ Une présentation claire, légère et rapide à charger, pour partager mon CV et
 - Formulaire de contact via Formspree
 - Hébergement sur Vercel, déploiement automatique depuis GitHub
 
+## Licence
+
+Le code (HTML, CSS, JavaScript) est sous licence [MIT](LICENSE).
+Les contenus (textes, photo, CV) restent © Romain Blanloeil, tous droits réservés.
+
 ## Structure
 
 - `index.html` : page d'accueil
