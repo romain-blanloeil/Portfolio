@@ -508,6 +508,21 @@ img { max-width: 100%; display: block; }
 .cert-link { display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--teal); }
 .cert-link:hover { text-decoration: underline; }
 
+.certs-grid { grid-template-columns: repeat(2, 1fr); }
+
+.cert-card.is-done {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.cert-card.is-done .cert-badge { margin: 0; flex-shrink: 0; }
+.cert-card.is-done .cert-name { margin-bottom: 0.3rem; }
+
+@media (max-width: 560px) {
+  .certs-grid { grid-template-columns: 1fr; }
+}
+
 
 /* ---------- PROJETS ---------- */
 .projects-grid {
