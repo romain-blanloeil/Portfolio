@@ -507,6 +507,45 @@ img { max-width: 100%; display: block; }
 .cert-badge { display: block; margin-bottom: 0.6rem; }
 .cert-link { display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--teal); }
 .cert-link:hover { text-decoration: underline; }
+.badges {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 120px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  transition: transform 0.12s ease, color 0.15s;
+}
+
+.badge:hover { transform: translateY(-2px); color: var(--teal); }
+
+.goals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.8rem;
+}
+
+.goals-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-right: 0.4rem;
+}
 
 .certs-grid { grid-template-columns: repeat(2, 1fr); }
 
