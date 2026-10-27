@@ -470,6 +470,11 @@ img { max-width: 100%; display: block; }
   font-size: 0.85rem;
 }
 
+.cert-card.is-done .cert-name::before {
+  content: '- [x]';
+  color: var(--teal);
+}
+
 .cert-status {
   display: inline-flex;
   align-items: center;
@@ -493,6 +498,16 @@ img { max-width: 100%; display: block; }
   opacity: 0.7;
   font-style: italic;
 }
+
+.cert-status.status-obtenu {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.cert-badge { display: block; margin-bottom: 0.6rem; }
+.cert-link { display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--teal); }
+.cert-link:hover { text-decoration: underline; }
+
 
 /* ---------- PROJETS ---------- */
 .projects-grid {
