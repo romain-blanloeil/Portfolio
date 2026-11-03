@@ -15,6 +15,11 @@ Une présentation claire, légère et rapide à charger, pour partager mon CV et
 - Formulaire de contact via Formspree
 - Hébergement sur Vercel, déploiement automatique depuis GitHub
 
+## Conception
+
+Conçu et développé par Romain Blanloeil, avec l'assistance de Claude (Anthropic) pour l'écriture du code.
+Choix de design et de contenu, tests, mise en ligne et maintenance : Romain Blanloeil.
+
 ## Licence
 
 Le code (HTML, CSS, JavaScript) est sous licence [MIT](LICENSE).
